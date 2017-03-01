@@ -14,7 +14,7 @@ var io = require('socket.io').listen(app);
 
 var client = require('socket.io-client');
 //socket to the cloud server
-var socket1 = client.connect('https://assetlocationing.herokuapp.com/', { reconnect: true });
+var socket1 = client.connect('https://assetlocationing.herokuapp.com/cd cd', { reconnect: true });
 
 
 // Send messages to connected client === cloudserver

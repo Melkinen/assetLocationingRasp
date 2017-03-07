@@ -19,7 +19,11 @@ var socket1 = client.connect('https://assetlocationing.herokuapp.com/cd cd', { r
 
 // Send messages to connected client === cloudserver
 function sendMessageToCloud() {
-    socket1.emit('message', { time: new Date().toJSON() });
+    var file;
+    file = fs.readFileSync('found_devices.txt');
+    console.log("file: " + file);
+    //socket1.emit('message', { time: new Date().toJSON() });
+    socket1.emit('message', { found: file.toJSON() });
 }
 
 // Send message to cloud server every 10 secs
